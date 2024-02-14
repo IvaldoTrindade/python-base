@@ -22,14 +22,18 @@ atividades = [("Inglês", aula_ingles),("Comunicação", aula_comunicacao),("Dan
 for nome_ativiade, atividade in atividades:
     print(f"Alunos da atividade: {nome_ativiade}\n")
     print("-" * 50)
-    atividade_sala1 = []
-    atividade_sala2 = []
 
+    #Interseção com os alunos das sala 1 e 2 que estão nas atividades.
+    atividade_sala1 = set(sala1) & set(atividade)
+    atividade_sala2 = set(sala2) & set(atividade)
+
+    """
     for aluno in atividade:
         if aluno in sala1:
             atividade_sala1.append(aluno)
         elif aluno in sala2:
             atividade_sala2.append(aluno)
+    """        
 
     print(f"Aula de {nome_ativiade} sala 1: ", atividade_sala1)
     print(f"Aula de {nome_ativiade} sala 2: ", atividade_sala2)
